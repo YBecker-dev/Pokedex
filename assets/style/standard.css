@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
-
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
 }
 
 header,
@@ -19,5 +21,16 @@ input {
 }
 
 h4 {
+    text-align: center;
+}
+
+.add-button {
+    color: black;
+    border: 0;
+    font-size: 24px;
+}
+
+h2 {
+    color: black !important;
     text-align: center;
 }

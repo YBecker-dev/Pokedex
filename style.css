@@ -5,53 +5,119 @@
 }
 
 .content {
-    display: flex;
     justify-content: center;
-
 }
 
 .pokemon-section {
     background-color: #173f4e;
     max-width: 200px;
-    margin: 16px;
+    margin: 16px 0;
+    ;
     width: 20vh;
-    height: 20vh;
+    cursor: pointer;
 }
 
 .pokemon-infos {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pokemon-infos p {
-  position: absolute;
-  left: 0;
-  left:4px; 
-  margin: 0;
-  font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    left: 4px;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
-.pokemon-infos h4{
+.pokemon-infos h4 {
     margin: 0;
     padding: 8px;
 }
 
 .pokemon-picture {
-    background-color: green;
     height: 65%;
-    padding: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
 .pokemon-picture img {
-    height: 64px;
+    height: 8.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    image-rendering: pixelated;
+}
+
+.pokemon-section:hover .pokemon-picture img {
+    transform: scale(1.15);
+    z-index: 3;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5));
 }
 
 .pokemon-type {
-    padding: 16px;
+    height: 3.5rem;
+    image-rendering: crisp-edges;
 }
 
 .pokemon-type img {
-    height: 32px;
+    height: 36px;
+    image-rendering: crisp-edges;
+}
+
+.pokemon-section:hover .pokemon-picture::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    z-index: 2;
+}
+
+.pokemon-detailed-information {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.452);
+    z-index: 1000;
+}
+
+.pokemon-detailed-information-header {
+    padding: 16px;
+    margin: 15vh 1vh 15vh 1vh;
+    width: 40vh;
+    border-radius: 25px;
+    background-color: #F5F3F1;
+}
+
+.wallpaper {
+    position: relative;
+    overflow: hidden;
+    background-image: url('assets/img/background-info.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    margin-bottom: 16px;
+}
+
+.wallpaper img {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+
+}
+
+.info-categorie{
+    border: 1px solid black;
+    padding: 0 16px;
+    background-color: #173f4e;
+    border-radius: 25px;
+}
+
+.info-categorie p {
+    margin: 0 
 }

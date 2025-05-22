@@ -1,0 +1,145 @@
+/* Einzeltpyen */
+.normal { background-color: #a4acaf; }
+.fire { background-color: #fd7d24; }
+.water { background-color: #4592c4; }
+.electric { background-color: #eed535; }
+.grass { background-color: #9bcc50; }
+.ice { background-color: #51c4e7; }
+.fighting { background-color: #d56723; }
+.poison { background-color: #b97fc9; }
+.ground { background-color: #f7de3f; }
+.flying { background-color: #3dc7ef; }
+.psychic { background-color: #f366b9; }
+.bug { background-color: #729f3f; }
+.rock { background-color: #a38c21; }
+.ghost { background-color: #7b62a3; }
+.dragon { background-color: #53a4cf; }
+.dark { background-color: #707070; }
+.steel { background-color: #9eb7b8; }
+.fairy { background-color: #fdb9e9; }
+
+/* Dualtypen */
+.normal.flying {
+  background: linear-gradient(120deg, #a4acaf 0%, #a4acaf 40%, #3dc7ef 60%, #3dc7ef 100%);
+}
+
+.fire.water {
+  background: linear-gradient(120deg, #fd7d24 0%, #fd7d24 40%, #4592c4 60%, #4592c4 100%);
+}
+
+.fire.flying {
+  background: linear-gradient(120deg, #fd7d24 0%, #fd7d24 40%, #3dc7ef 60%, #3dc7ef 100%);
+}
+
+.grass.poison {
+  background: linear-gradient(135deg, #9bcc50 0%, #9bcc50 40%, #b97fc9 60%, #b97fc9 100%);
+}
+
+.bug.grass {
+  background: linear-gradient(120deg, #729f3f 0%, #729f3f 40%, #9bcc50 60%, #9bcc50 100%);
+}
+
+.bug.flying {
+  background: linear-gradient(120deg, #729f3f 0%, #729f3f 40%, #3dc7ef 60%, #3dc7ef 100%);
+}
+
+.water.ice {
+  background: linear-gradient(120deg, #4592c4 0%, #4592c4 40%, #51c4e7 60%, #51c4e7 100%);
+}
+
+.rock.ground {
+  background: linear-gradient(120deg, #a38c21 0%, #a38c21 40%, #f7de3f 60%, #f7de3f 100%);
+}
+
+.ghost.poison {
+  background: linear-gradient(120deg, #7b62a3 0%, #7b62a3 40%, #b97fc9 60%, #b97fc9 100%);
+}
+
+.psychic.fairy {
+  background: linear-gradient(120deg, #f366b9 0%, #f366b9 40%, #fdb9e9 60%, #fdb9e9 100%);
+}
+
+.fighting.steel {
+  background: linear-gradient(120deg, #d56723 0%, #d56723 40%, #9eb7b8 60%, #9eb7b8 100%);
+}
+
+.electric.steel {
+  background: linear-gradient(120deg, #eed535 0%, #eed535 40%, #9eb7b8 60%, #9eb7b8 100%);
+}
+
+.dark.ghost {
+  background: linear-gradient(120deg, #707070 0%, #707070 40%, #7b62a3 60%, #7b62a3 100%);
+}
+
+.dragon.flying {
+  background: linear-gradient(120deg, #53a4cf 0%, #53a4cf 40%, #3dc7ef 60%, #3dc7ef 100%);
+}
+
+.ice.flying {
+  background: linear-gradient(120deg, #51c4e7 0%, #51c4e7 40%, #3dc7ef 60%, #3dc7ef 100%);
+}
+
+.bug.poison {
+  background: linear-gradient(120deg, #729f3f 0%, #729f3f 40%, #b97fc9 60%, #b97fc9 100%);
+}
+
+/* NEU hinzugefügte Kombinationen */
+.water.poison {
+  background: linear-gradient(120deg, #4592c4 0%, #4592c4 40%, #b97fc9 60%, #b97fc9 100%);
+}
+
+.poison.ground {
+  background: linear-gradient(120deg, #b97fc9 0%, #b97fc9 40%, #f7de3f 60%, #f7de3f 100%);
+}
+
+.poison.flying {
+  background: linear-gradient(120deg, #b97fc9 0%, #b97fc9 40%, #3dc7ef 60%, #3dc7ef 100%);
+}
+
+.water.psychic {
+  background: linear-gradient(120deg, #4592c4 0%, #4592c4 40%, #f366b9 60%, #f366b9 100%);
+}
+
+.grass.psychic {
+  background: linear-gradient(120deg, #9bcc50 0%, #9bcc50 40%, #f366b9 60%, #f366b9 100%);
+}
+
+.ice.psychic {
+  background: linear-gradient(120deg, #51c4e7 0%, #51c4e7 40%, #f366b9 60%, #f366b9 100%);
+}
+
+.water.flying {
+  background: linear-gradient(120deg, #4592c4 0%, #4592c4 40%, #3dc7ef 60%, #3dc7ef 100%);
+}
+
+.rock.water {
+  background: linear-gradient(120deg, #a38c21 0%, #a38c21 40%, #4592c4 60%, #4592c4 100%);
+}
+
+.fairy.steel {
+  background: linear-gradient(120deg, #fdb9e9 0%, #fdb9e9 40%, #9eb7b8 60%, #9eb7b8 100%);
+}
+
+.dark.fairy {
+  background: linear-gradient(120deg, #707070 0%, #707070 40%, #fdb9e9 60%, #fdb9e9 100%);
+}
+
+.dragon.fairy {
+  background: linear-gradient(120deg, #53a4cf 0%, #53a4cf 40%, #fdb9e9 60%, #fdb9e9 100%);
+}
+
+.dark.steel {
+  background: linear-gradient(120deg, #707070 0%, #707070 40%, #9eb7b8 60%, #9eb7b8 100%);
+}
+
+.normal.fairy {
+  background: linear-gradient(120deg, #a4acaf 0%, #a4acaf 40%, #fdb9e9 60%, #fdb9e9 100%);
+}
+
+.water.fighting {
+  background: linear-gradient(120deg, #4592c4 0%, #4592c4 40%, #d56723 60%, #d56723 100%);
+}
+
+.electric.flying {
+  background: linear-gradient(120deg, #eed535 0%, #eed535 40%, #3dc7ef 60%, #3dc7ef 100%);
+}
