@@ -10,7 +10,6 @@
 
 .pokemon-section {
     background-color: #173f4e;
-    max-width: 200px;
     margin: 16px 0;
     border-radius: 15px;
     width: 20vh;
@@ -151,6 +150,22 @@ body.loading {
     color: white;
 }
 
-.a-link-header a:hover{
+.a-link-header a:hover {
     transform: scale(1.05);
+}
+
+.main-content {
+    padding: 16px;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+
+.main-content img:hover {
+    transform: scale(1.05);
+    z-index: 3;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5))
+}
+
+.main-content img {
+    height: 250px;
 }

@@ -81,10 +81,10 @@ function getGenderHtml(genderRate) {
     return 'Unbekannt';
   }
   if (genderRate === 0) {
-    return `<img class='gender-img' src='../img/maennliches-geschlecht.png'> 100% <img class='gender-img' src='../img/weibliches-geschlecht.png'> 0% `;
+    return;
   }
   if (genderRate === 8) {
-    return `<img class='gender-img' src='../img/maennliches-geschlecht.png'> 0% <img class='gender-img' src='../img/weibliches-geschlecht.png'> 100% `;
+    return;
   }
   let malePercent = ((8 - genderRate) / 8) * 100;
   let femalePercent = (genderRate / 8) * 100;

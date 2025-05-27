@@ -1,7 +1,5 @@
-function init() {
-  offset = 0;
-  allPokemons = [];
-  loadPokemonsWithDetail();
+function initIndexHtml() {
+  renderAllGenerationStarters();
 }
 
 function showPokemonDetail(index) {
@@ -14,14 +12,6 @@ function showPokemonDetail(index) {
 function togglePokemonInfo() {
   let toggle = document.getElementById('pokemon-detailed-information');
   toggle.classList.toggle('d-none');
-}
-
-function loadMore() {
-  offset += limit;
-  if (offset >= 151) {
-    return;
-  }
-  loadPokemonsWithDetail();
 }
 
 function addMorePokemons(pokemons) {
@@ -83,4 +73,4 @@ function pokemonPush(pokemons, pokemon, details, types, gender, weight, number) 
     weight: weight,
     number: number,
   });
-}
+} 

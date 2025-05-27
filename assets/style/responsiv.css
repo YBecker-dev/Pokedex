@@ -1,0 +1,6 @@
+@media (max-width: 990px) {
+    body > .main-content {
+        justify-content: center !important;
+        gap:20px
+    }
+}

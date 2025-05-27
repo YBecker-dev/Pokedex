@@ -16,7 +16,7 @@
     />
     <title>Pokedex</title>
   </head>
-  <body onload="init()">
+  <body onload="initIndexHtml()">
     <header class="d-flex justify-content-between align-items-center">
       <div class="header-img-section">
         <img src="assets/img/pokeball.png" alt="Pokeball" />
@@ -28,22 +28,17 @@
         <a href="assets/html/3_generation.html">3. Generation</a>
         <a href="assets/html/4_generation.html">4. Generation</a>
       </div>
-      <input class="text-center" type="text" placeholder="Suche" id="searchInput" oninput="searchPokemon()" />
     </header>
 
-    <section class="content d-flex justify-content-center flex-wrap gap-3" id="content"></section>
-
-    <section id="loadMoreBtn"></section>
-
-    <div id="loader" class="loader-overlay d-flex d-none">
+    <main id="main-content" class="main-content d-flex justify-content-between align-items-center"></main>
+    
+   <div id="loader" class="loader-overlay d-flex d-none">
       <iframe src="https://lottie.host/embed/3e669d20-6e6a-444c-b30a-28b75071d743/0PkxcGWFaq.lottie"></iframe>
     </div>
-
-    <section id="pokemon-detailed-information-section"></section>
-
+    
     <footer></footer>
   </body>
   <script src="assets/script/template.js"></script>
-  <script src="assets/script/async-function.js"></script>
+  <script src="assets/script/index.js"></script>
   <script src="script.js"></script>
 </html>
