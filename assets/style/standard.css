@@ -16,6 +16,10 @@ footer {
     padding: 16px;
 }
 
+header {
+    margin-bottom: 16px;
+}
+
 input {
     height: 32px;
 }
@@ -39,4 +43,14 @@ h2 {
 a {
     text-decoration: none !important;
     text-align: center;
+}
+
+td,
+th {
+    color: black;
+    align-self: first baseline;
+}
+
+.background-cart>.d-flex>table>tbody>tr>th,td {
+    padding: 8px;
 }

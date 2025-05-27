@@ -5,7 +5,7 @@ function initIndexHtml() {
 function showPokemonDetail(index) {
   let pokemon = allPokemons[index];
   let detailsRef = document.getElementById('pokemon-detailed-information-section');
-  detailsRef.innerHTML = pokemonDetailCardHtml(pokemon);
+  detailsRef.innerHTML = pokemonDetailCardHtml(pokemon, index);
   document.getElementById('pokemon-detailed-information').classList.remove('d-none');
 }
 
@@ -20,14 +20,14 @@ function addMorePokemons(pokemons) {
   }
 }
 
-function renderPokemons(pokemons) {
+function renderPokemons(allPokemons) {
   let PokemonImgRef = document.getElementById('content');
-  let loadMoreBtnRef = document.getElementById('loadMoreBtn')
+  let loadMoreBtnRef = document.getElementById('loadMoreBtn');
   loadMoreBtnRef.innerHTML = '';
   PokemonImgRef.innerHTML = '';
 
-  for (let i = 0; i < pokemons.length; i++) {
-    let pokemon = pokemons[i];
+  for (let i = 0; i < allPokemons.length; i++) {
+    let pokemon = allPokemons[i];
     let allIndex = -1;
     for (let index = 0; index < allPokemons.length; index++) {
       if (allPokemons[index].name === pokemon.name) {
@@ -37,7 +37,6 @@ function renderPokemons(pokemons) {
     }
     PokemonImgRef.innerHTML += pokemonCardHtml(pokemon, allIndex);
   }
-
   loadMoreBtnRef.innerHTML += LoadMorePokemons();
 }
 
@@ -64,13 +63,21 @@ function searchPokemon() {
   renderPokemons(filteredPokemons);
 }
 
-function pokemonPush(pokemons, pokemon, details, types, gender, weight, number) {
-  pokemons.push({
-    name: pokemon.name,
-    image: details.sprites.other.dream_world.front_default,
-    types: types,
-    genderRate: gender,
-    weight: weight,
-    number: number,
-  });
-} 
+
+function nextPokemon(index) {
+  let nextIndex = index + 1;
+  if (nextIndex >= allPokemons.length) {
+    nextIndex = 0;
+  }
+  let next = allPokemons[nextIndex];
+  document.getElementById('pokemon-detailed-information-section').innerHTML = pokemonDetailCardHtml(next, nextIndex);
+}
+
+function previousPokemon(index) {
+  let prevIndex = index - 1;
+  if (prevIndex < 0) {
+    prevIndex = allPokemons.length - 1;
+  }
+  let prev = allPokemons[prevIndex];
+  document.getElementById('pokemon-detailed-information-section').innerHTML = pokemonDetailCardHtml(prev, prevIndex);
+}

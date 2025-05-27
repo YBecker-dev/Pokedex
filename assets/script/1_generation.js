@@ -18,7 +18,7 @@ async function loadPokemonsWithDetail() {
   let responseToJson = await response.json();
   const pokemons = [];
   await renderPokemonStats(pokemons, responseToJson);
-  addMorePokemons(pokemons); //füllt Pokemon mit limit = Zahl
+  addMorePokemons(pokemons);
   renderPokemons(allPokemons);
   await new Promise((resolve) => setTimeout(resolve, 1100));
   hideLoader();

@@ -1,8 +1,8 @@
 async function renderPokemonStats(pokemons, responseToJson) {
   for (let i = 0; i < responseToJson.results.length; i++) {
     let pokemon = responseToJson.results[i];
-    let apiNameSpecies = getApiName(pokemon.name, true);
-    let apiNamePokemon = getApiName(pokemon.name, false);
+    let apiNameSpecies = getApiName(pokemon.name, true); // für besondere Pokemon die mit Bindestrich geschrieben sind
+    let apiNamePokemon = getApiName(pokemon.name, false); // für besondere Pokemon die mit Bindestrich geschrieben sind
     let response = await fetch(pokemon.url);
     let details = await response.json();
     let gender = await getPokemonGender(apiNameSpecies);
@@ -13,21 +13,6 @@ async function renderPokemonStats(pokemons, responseToJson) {
     }
     pokemonPush(pokemons, pokemon, details, types, gender, weight, offset + i + 1);
   }
-}
-
-async function getPokemonWeight(apiName) {
-  let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${apiName}`);
-  let data = await response.json();
-  return {
-    height: data.height / 10 + ' m',
-    weight: data.weight / 10 + ' kg',
-  };
-}
-
-async function getPokemonGender(apiName) {
-  let response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${apiName}`);
-  let data = await response.json();
-  return data.gender_rate;
 }
 
 async function getPokemonDetails(pokemon) {
@@ -45,6 +30,33 @@ async function getPokemonDetails(pokemon) {
     types: types,
   };
 }
+
+async function getPokemonWeight(apiName) {
+  let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${apiName}`);
+  let data = await response.json();
+  return {
+    height: data.height / 10 + ' m',
+    weight: data.weight / 10 + ' kg',
+  };
+}
+
+async function getPokemonGender(apiName) {
+  let response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${apiName}`);
+  let data = await response.json();
+  return data.gender_rate;
+}
+
+function pokemonPush(pokemons, pokemon, details, types, gender, weight, number) {
+  pokemons.push({
+    name: pokemon.name,
+    image: details.sprites.other.dream_world.front_default,
+    types: types,
+    genderRate: gender,
+    weight: weight,
+    number: number,
+  });
+}
+
 
 function getApiName(name, forSpecies = false) {
   if (name.startsWith('deoxys')) return forSpecies ? 'deoxys' : 'deoxys-normal';
