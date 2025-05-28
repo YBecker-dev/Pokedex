@@ -7,6 +7,8 @@ function showPokemonDetail(index) {
   let detailsRef = document.getElementById('pokemon-detailed-information-section');
   detailsRef.innerHTML = pokemonDetailCardHtml(pokemon, index);
   document.getElementById('pokemon-detailed-information').classList.remove('d-none');
+  document.getElementById('pokemon-detailed-information-section').innerHTML = pokemonDetailCardHtml(pokemon, index);
+  border(pokemon);
 }
 
 function togglePokemonInfo() {
@@ -63,6 +65,13 @@ function searchPokemon() {
   renderPokemons(filteredPokemons);
 }
 
+function border(pokemon) {
+  detailedRef = document.getElementById('pokemon-detailed-information-header');
+  for (let i = 0; i < pokemon.types.length; i++) {
+    let type = pokemon.types[i];
+    detailedRef.classList.add('border-' + type);
+  }
+}
 
 function nextPokemon(index) {
   let nextIndex = index + 1;
@@ -71,6 +80,7 @@ function nextPokemon(index) {
   }
   let next = allPokemons[nextIndex];
   document.getElementById('pokemon-detailed-information-section').innerHTML = pokemonDetailCardHtml(next, nextIndex);
+  border(next);
 }
 
 function previousPokemon(index) {
@@ -80,4 +90,5 @@ function previousPokemon(index) {
   }
   let prev = allPokemons[prevIndex];
   document.getElementById('pokemon-detailed-information-section').innerHTML = pokemonDetailCardHtml(prev, prevIndex);
+  border(prev);
 }

@@ -1,6 +1,5 @@
 let allPokemons = [];
 
-
 function pokemonCardHtml(pokemon, i) {
   return `
     <div onclick="showPokemonDetail(${i})" class="pokemon-section d-flex flex-column " id="pokemon-infos">
@@ -23,9 +22,7 @@ function pokemonCardHtml(pokemon, i) {
 function pokemonDetailCardHtml(pokemon, index) {
   return `    
     <div class="pokemon-detailed-information d-flex justify-content-center" id="pokemon-detailed-information" onclick="togglePokemonInfo()">
-      <div class="pokemon-detailed-information-header ${pokemon.types.join(
-        ' '
-      )} d-flex flex-column"  id="pokemon-detailed-information-header" onclick="eventBubbling(event)">
+      <div class="pokemon-detailed-information-header ${pokemon.types.join(' ')} d-flex flex-column"  id="pokemon-detailed-information-header" onclick="eventBubbling(event)">
         <div class="wallpaper">
                <div class="cart-header d-flex position-relative justify-content-end">
           <button onclick="togglePokemonInfo()" class="add-button d-flex">x</button>
@@ -40,8 +37,8 @@ function pokemonDetailCardHtml(pokemon, index) {
             <table>
               <tr>
                 <th>Type :</th>
-                <td class="pokemon-types-border">
-                  ${typesWithBackgroundColorAndBorder(pokemon)}
+                <td>
+                  ${renderTypeLabels(pokemon)}
                 </td>
               </tr>
               <tr>
@@ -96,7 +93,7 @@ function getGenderHtml(genderRate) {
   return `<img class='gender-img' src='../img/maennliches-geschlecht.png'> ${malePercent} % <img class='gender-img' src='../img/weibliches-geschlecht.png'> ${femalePercent} % `;
 }
 
-function typesWithBackgroundColorAndBorder(pokemon) {
+function renderTypeLabels(pokemon) {
   let html = '';
   for (let i = 0; i < pokemon.types.length; i++) {
     let type = pokemon.types[i];
@@ -108,3 +105,4 @@ function typesWithBackgroundColorAndBorder(pokemon) {
   }
   return html;
 }
+
