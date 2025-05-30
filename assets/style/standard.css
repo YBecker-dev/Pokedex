@@ -11,13 +11,9 @@
 header,
 footer {
     width: 100%;
-    height: 10vh;
+    min-height: 10vh;
     background-color: #173f4e;
     padding: 16px;
-}
-
-header {
-    margin-bottom: 16px;
 }
 
 input {
@@ -51,6 +47,7 @@ th {
     align-self: first baseline;
 }
 
-.background-cart>.d-flex>table>tbody>tr>th,td {
+.background-cart>.d-flex>table>tbody>tr>th,
+td {
     padding: 8px;
 }

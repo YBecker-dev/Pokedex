@@ -105,4 +105,3 @@ function renderTypeLabels(pokemon) {
   }
   return html;
 }
-

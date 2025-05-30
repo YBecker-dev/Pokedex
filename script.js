@@ -92,3 +92,18 @@ function previousPokemon(index) {
   document.getElementById('pokemon-detailed-information-section').innerHTML = pokemonDetailCardHtml(prev, prevIndex);
   border(prev);
 }
+
+function toggleMenu() {
+  document.getElementById('toggle-menu-responsive').classList.toggle('d-none');
+  html = ""
+  let toogleMenuRef = document.getElementById('toggle-menu-responsive');
+  html += `        
+        <div class="d-flex flex-column gap-2">
+          <a href="1_generation.html">1. Generation</a>
+          <a href="2_generation.html">2. Generation</a>
+          <a href="3_generation.html">3. Generation</a>
+          <a href="4_generation.html">4. Generation</a>
+        </div>`
+
+ toogleMenuRef.innerHTML = html;
+}
