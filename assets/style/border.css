@@ -1,0 +1,37 @@
+.tr-border-normal   { border: 3px solid #8a969c; }
+.tr-border-fire     { border: 3px solid #b25c1a; }
+.tr-border-water    { border: 3px solid #35749a; }
+.tr-border-electric { border: 3px solid #b2a100; }
+.tr-border-grass    { border: 3px solid #6b8e23; }
+.tr-border-ice      { border: 3px solid #3991a8; }
+.tr-border-fighting { border: 3px solid #b24a1a; }
+.tr-border-poison   { border: 3px solid #7a4a8a; }
+.tr-border-ground   { border: 3px solid #bfa32a; }
+.tr-border-flying   { border: 3px solid #277a9a; }
+.tr-border-psychic  { border: 3px solid #b25c7a; }
+.tr-border-bug      { border: 3px solid #6b8e23; }
+.tr-border-rock     { border: 3px solid #8a7a3c; }
+.tr-border-ghost    { border: 3px solid #6b4a8a; }
+.tr-border-dragon   { border: 3px solid #35749a; }
+.tr-border-dark     { border: 3px solid #707070; }
+.tr-border-steel    { border: 3px solid #7a8a8a; }
+.tr-border-fairy    { border: 3px solid #b27a8a; }
+
+.tr-background-normal   { background-color: #e3e6e8; }
+.tr-background-fire     { background-color: #f3c7a6; }
+.tr-background-water    { background-color: #b3d1e6; }
+.tr-background-electric { background-color: #f7f2b2; }
+.tr-background-grass    { background-color: #b7cfa1; }
+.tr-background-ice      { background-color: #a6d1db; }
+.tr-background-fighting { background-color: #e6b7a6; }
+.tr-background-poison   { background-color: #c3a6cf; }
+.tr-background-ground   { background-color: #e6d8a6; }
+.tr-background-flying   { background-color: #a6cfe6; }
+.tr-background-psychic  { background-color: #e6b7c7; }
+.tr-background-bug      { background-color: #b7cfa1; }
+.tr-background-rock     { background-color: #d1c7a6; }
+.tr-background-ghost    { background-color: #b7a6cf; }
+.tr-background-dragon   { background-color: #b3d1e6; }
+.tr-background-dark     { background-color: #b0b0b0; }
+.tr-background-steel    { background-color: #b7c3c3; }
+.tr-background-fairy    { background-color: #e6c7d1; }

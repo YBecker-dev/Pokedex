@@ -1,12 +1,10 @@
 .header-img-section {
     display: flex;
     align-items: center;
-    gap: 16px;
 }
 
 .content {
     min-height: 80vh;
-    margin-top: 16px;
     padding: 0 8px;
 }
 
@@ -14,7 +12,7 @@
     border-radius: 15px;
     cursor: pointer;
     overflow: hidden;
-    height: 144px;
+    height: 180px;
     margin-bottom: 8px;
 }
 
@@ -24,17 +22,17 @@
 }
 
 .position-icon {
-    top: 48px;
-    right: 8px;
+    bottom: 18px;
+    right: 4px;
 }
 
 .position-name {
-    top: 75px;
+    top: 106px;
     left: 4px;
 }
 
 .position-name>h4 {
-    font-size: 1.25rem;
+font-size: calc(16px + 0.5vw);
     text-shadow: 1px 1px 0 #000;
 }
 
@@ -112,7 +110,7 @@
 
 .pokemon-detailed-information-header {
     padding: 16px;
-    margin: 15vh 1vh 15vh 1vh;
+    margin: 1rem 0;
     width: 60vh;
     border-radius: 25px;
     background-color: #F5F3F1;
@@ -229,7 +227,6 @@ td img {
     background-color: white;
     width: 100%;
     height: 100%;
-    border-radius: 25px;
 }
 
 .pokemon-types-border {
@@ -252,26 +249,121 @@ td img {
     right: 20px;
 }
 
-.header-img-section > h1 {
-    font-size: 2,5rem !important;
+.header-img-section>h1 {
+    font-size: 2, 5rem !important;
 }
 
-#toggle-menu.d-none{
+.header-img-section>a>h1 {
+    margin: 0
+}
+
+#toggle-menu.d-none {
     cursor: pointer;
 }
 
-.test {
+.d-flex.flex-column.gap-2 a {
+    align-self: center;
+    width: auto;
+}
+
+.generation-starter {
+    height: 75vh;
     width: 100%;
-    background-color: rgb(255, 0, 0);
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    min-height: 10vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid #000;
     border-radius: 1rem;
 }
 
-.d-flex.flex-column.gap-2 a {
-  align-self: center;
-  width: auto;
+.generation-starter img {
+    height: 60vh;
+    width: 250px;
+    object-fit: cover;
+    transition: all ease-in-out 0.2s;
+}
+
+.generation-starter img:hover {
+    transform: scale(1.02);
+}
+
+.main-content>div>.generation-starter>a {
+    font-size: 20px;
+    color: black;
+    text-shadow: 1px 1px 12px #000;
+}
+
+.m-w {
+    max-width: 1700px !important;
+}
+
+#Pokedex {
+    font-size: 40px;
+}
+
+#backward {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.menu-links {
+    color: black;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background-color: white;
+    height: 32px;
+}
+
+.responsive-menu {
+    background-color: #23607a;
+    top: 0;
+    right: 0;
+    min-height: 10vh;
+    border-radius: 0 0 1rem 1rem;
+    z-index: 1;
+    width: 100%;
+}
+
+.table-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tr-section {
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+#info {
+    margin: 0px;
+}
+
+.test {
+    margin-right: 20px;
+}
+
+.background-cart>.d-flex>table>tbody>tr>th {
+    padding: 8px 4px !important;
+}
+
+.table-bordered {
+  border-radius: 12px;
+  background: white; /* optional, damit nur der Rand farbig ist */
+}
+
+.shiny {
+    cursor: pointer;
+}
+
+.shiny:hover {
+    transform: scale(10);
+    z-index: 3;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5));
+    transition: all 0.3s ease-in-out;
+}
+
+#th-button{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }

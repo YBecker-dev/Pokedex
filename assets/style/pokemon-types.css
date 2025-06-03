@@ -725,24 +725,3 @@
 .border-fairy {
   border: 5px solid #f8bbd0;
 }
-
-.pokemon-detailed-information-header.border-fire.flying {
-  border-radius: 25px;
-  position: relative;
-  z-index: 1;
-}
-
-.pokemon-detailed-information-header.border-fire.flying::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 25px;
-  z-index: -1;
-  background: linear-gradient(120deg, #ffb380 0%, #ffb380 40%, #7ecbff 60%, #7ecbff 100%);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  padding: 5px;
-  box-sizing: border-box;
-}

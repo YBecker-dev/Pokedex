@@ -10,10 +10,7 @@ function init() {
 async function loadPokemonsWithDetail() {
   showLoader();
   let remaining = 151 - offset;
-  let currentLimit = limit;
-  if (remaining < limit) {
-    currentLimit = remaining;
-  }
+  let currentLimit = currentLimitPokemonLoaded(remaining, limit)
   let response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${currentLimit}&offset=${offset}`);
   let responseToJson = await response.json();
   const pokemons = [];
@@ -22,9 +19,7 @@ async function loadPokemonsWithDetail() {
   renderPokemons(allPokemons);
   await new Promise((resolve) => setTimeout(resolve, 1100));
   hideLoader();
-    if (offset + currentLimit >= 151) {
-    document.getElementById('loadMoreBtn').classList.add('d-none');
-  }
+  hideLoadMoreButtonIfComplete(offset, currentLimit)
 }
 
 function loadMore() {
@@ -33,4 +28,10 @@ function loadMore() {
     return;
   }
   loadPokemonsWithDetail();
+}
+
+function hideLoadMoreButtonIfComplete(offset, currentLimit) {
+  if (offset + currentLimit >= 151) {
+    document.getElementById('loadMoreBtn').classList.add('d-none');
+  }
 }
