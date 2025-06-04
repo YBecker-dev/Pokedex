@@ -17,25 +17,36 @@
     <title>Pokedex</title>
   </head>
   <body onload="initIndexHtml()">
-    <header class="d-flex justify-content-between align-items-center">
-      <div class="header-img-section">
-        <img src="assets/img/pokeball.png" alt="Pokeball" />
-        <a href="index.html"><h1>Pokedex</h1></a>
+    <header class="d-flex justify-content-between p-3 w-100">
+      <div class="w-100">
+        <div class="header-img-section d-flex align-items-center justify-content-center mb-3">
+          <div class="header-img-section gap-2">
+            <img src="./assets/img/header/pokeball.png" alt="Pokeball" />
+            <a href="index.html"><h1 id="Pokedex">Pokedex</h1></a>
+          </div>
+        </div>
       </div>
+      <div class="responsive-menu d-none position-absolute" id="toggle-menu-responsive"></div>
     </header>
 
-    <main id="main-content" class="main-content d-flex align-items-center gap-2 align-items-center justify-content-center">
-    </main>
+    <main id="main-content" class="main-content"></main>
 
     <div id="loader" class="loader-overlay d-flex d-none">
       <iframe src="https://lottie.host/embed/3e669d20-6e6a-444c-b30a-28b75071d743/0PkxcGWFaq.lottie"></iframe>
     </div>
 
-    <footer>
-      
+    <footer class="d-flex align-items-center justify-content-center">
+      <div class="container-fluid custom-container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p>&copy; 2025 Yannick Becker. Alle Rechte vorbehalten.</p>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
   <script src="assets/script/template.js"></script>
+  <script src="assets/script/allGeneration.js"></script>
   <script src="assets/script/index.js"></script>
   <script src="script.js"></script>
 </html>

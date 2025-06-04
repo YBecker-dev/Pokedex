@@ -22,20 +22,22 @@ function pokemonCardHtml(pokemon, i) {
 
 function pokemonDetailCardHtml(pokemon, index) {
   return `    
-    <div class="d-flex justify-content-center" id="pokemon-detailed-information">
-      <div class="pokemon-detailed-information-header ${pokemon.types[0]} d-flex flex-column" id="pokemon-detailed-information-header">
+    <div onclick="closePokemonInfo()" class="d-flex justify-content-center pokemon-overlay" id="pokemon-detailed-information">
+      <div onclick="eventBubbling(event)" class="pokemon-detailed-information-header hide-scrollbar ${
+        pokemon.types[0]
+      } d-flex flex-column" id="pokemon-detailed-information-header">
         <div class="wallpaper">
           <div class="cart-header d-flex position-relative justify-content-end">
-          <button onclick="closePokemonInfo()" class="add-button d-flex">x</button>
-          </div>
+          <img onclick="closePokemonInfo()" id="close" src="/assets/img/menu/gebogener-pfeil.png">
+        </div>
         <div>
-            <h2>${pokemon.name.charAt().toUpperCase() + pokemon.name.slice(1)}</h2>
+            <h2 class="mt-3" id="wallpaper-h2">${pokemon.name.charAt().toUpperCase() + pokemon.name.slice(1)}</h2>
           <img src="${pokemon.image}">
           </div>
         </div>
-        <div class="background-cart">
+        <div>
           <div class="d-flex justify-content-center pokemon-detailed-information-bottom flex-wrap flex-column p-2">
-            <table class="table-bordered tr-border-${pokemon.types[0]}">
+            <table class="table-bordered table-sm small-table tr-border-${pokemon.types[0]}">
               <tr>
                 <th colspan="2" class="tr-background-${pokemon.types[0]}">
                   <p class="text-center text-black fw-bold" id="info"> Allgemeine Informationen zu <span class="pokemon-name">${
@@ -86,8 +88,8 @@ function pokemonDetailCardHtml(pokemon, index) {
                 <td>${pokemon.baseHappiness}</td>
               </tr>
               <tr>
-                <th colspan="2 class="text-center">
-                  <button id="th-button" onclick="viewBack()" class="tr-background-${pokemon.types[0]} text-black d-block mx-auto my-4 p-1"> Zurück </button>
+                <th colspan="2" class="tr-background-${pokemon.types[0]}">
+                  <div class="text-center">&nbsp;<div>
                 </th>
               </tr>
             </table>
@@ -116,7 +118,6 @@ function pokemonDetailCardHtml(pokemon, index) {
 
 function LoadMorePokemons() {
   return `<button class="btn btn-primary d-block mx-auto my-4" onclick="loadMore(), closePokemonInfo()">Mehr laden</button>`;
-
 }
 
 function getTypeImage(type) {
@@ -143,7 +144,7 @@ function getGenderHtml(genderRate) {
   }
   let malePercent = ((8 - genderRate) / 8) * 100;
   let femalePercent = (genderRate / 8) * 100;
-  return `<img class='gender-img' src='../img/maennliches-geschlecht.png'> ${malePercent} % <img class='gender-img' src='../img/weibliches-geschlecht.png'> ${femalePercent} % `;
+  return `<img class='gender-img' src='../img/gender/maennliches-geschlecht.png'> ${malePercent} % <img class='gender-img' src='../img/gender/weibliches-geschlecht.png'> ${femalePercent} % `;
 }
 
 function renderTypeLabels(pokemon) {
@@ -172,12 +173,13 @@ function menuHtml() {
         </div>`;
 }
 
-function indexHtml(generationNumber, imageUrl) {
+async function indexHtml(generationNumber, imageUrl) {
   return `
-    <div>
-      <div class="generation-starter d-flex flex-column-reverse justify-content-center gap-3 p-3">
+    <div class="generation gap-3 p-1">
+      <div class="generation-starter d-flex flex-column-reverse justify-content-center p-3">
         <a href="assets/html/${generationNumber}_generation.html">${generationNumber}. Generation</a>
         <a href="assets/html/${generationNumber}_generation.html"><img src="${imageUrl}"></a>
       </div>
-    </div>`;
+    </div>
+  `;
 }

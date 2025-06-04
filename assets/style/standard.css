@@ -9,10 +9,34 @@
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 25%, #45B7D1 50%, #96CEB4 75%, #FECA57 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
 header,
 footer {
     min-height: 10vh;
-    background-color: #173f4e;
+    background-color: #234e70;
+}
+
+header {
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+footer {
+    border-top: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 input {
@@ -46,8 +70,6 @@ th {
     align-self: first baseline;
 }
 
-.background-cart>.d-flex>table>tbody>tr>th,
-td {
-    padding: 8px;
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
 }
-

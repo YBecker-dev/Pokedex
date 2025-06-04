@@ -20,22 +20,6 @@ function extractPokemonTypes(details) {
   return types;
 }
 
-async function getPokemonDetails(pokemon) {
-  let baseName = pokemon.name.split('-')[0];
-  let apiName = getSpezialPokemon(baseName);
-  let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${apiName}`);
-  let details = await response.json();
-  let types = [];
-  for (let i = 0; i < details.types.length; i++) {
-    types.push(details.types[i].type.name);
-  }
-  return {
-    name: pokemon.name,
-    image: details.sprites.front_default,
-    types: types,
-  };
-}
-
 async function getPokemonWeight(apiName) {
   let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${apiName}`);
   let data = await response.json();
@@ -88,8 +72,8 @@ function getSpezialPokemon(name, forSpecies = false) {
 }
 
 function currentLimitPokemonLoaded(remaining, limit) {
-    if (remaining < limit) {
-        return remaining;
-    }
-    return limit;
+  if (remaining < limit) {
+    return remaining;
+  }
+  return limit;
 }

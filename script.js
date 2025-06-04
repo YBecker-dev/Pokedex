@@ -1,8 +1,4 @@
-let lastClickedPokemonId = null;
-
-function initIndexHtml() {
-  renderAllGenerationStarters();
-}
+let lastClickedPokemonId = '';
 
 function showPokemonDetail(index) {
   let pokemon = allPokemons[index];
@@ -10,12 +6,14 @@ function showPokemonDetail(index) {
   let detailsRef = document.getElementById('pokemon-detailed-information-section');
   detailsRef.innerHTML = pokemonDetailCardHtml(pokemon, index);
   border(pokemon);
-  document.getElementById('pokemon-detailed-information').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  document.body.classList.add('no-scroll');
 }
 
 function closePokemonInfo() {
   let close = document.getElementById('pokemon-detailed-information');
+  if (!close) return;
   close.classList.add('close-animate');
+  document.body.classList.remove('no-scroll');
   setTimeout(function () {
     close.classList.add('d-none');
     close.classList.remove('close-animate');
@@ -33,7 +31,7 @@ function renderPokemons(allPokemons) {
   let loadMoreBtnRef = document.getElementById('loadMoreBtn');
   loadMoreBtnRef.innerHTML = '';
   PokemonImgRef.innerHTML = '';
-  renderPokemList(allPokemons, PokemonImgRef);  
+  renderPokemList(allPokemons, PokemonImgRef);
   loadMoreBtnRef.innerHTML += LoadMorePokemons();
 }
 
@@ -51,17 +49,14 @@ function renderPokemList(allPokemons, PokemonImgRef) {
   }
 }
 
-
-function eventBubbling(event) {
-  event.stopPropagation();
-}
-
 function showLoader() {
   document.getElementById('loader').classList.remove('d-none');
+  document.body.classList.add('no-scroll-loader');
 }
 
 function hideLoader() {
   document.getElementById('loader').classList.add('d-none');
+  document.body.classList.remove('no-scroll-loader');
 }
 
 async function searchPokemon() {
@@ -90,6 +85,7 @@ function changePokemon(index, direction) {
   if (newIndex < 0) newIndex = allPokemons.length - 1;
   if (newIndex >= allPokemons.length) newIndex = 0;
   let pokemon = allPokemons[newIndex];
+  lastClickedPokemonId = pokemon.name;
   document.getElementById('pokemon-detailed-information-section').innerHTML = pokemonDetailCardHtml(pokemon, newIndex);
   border(pokemon);
   animationPrevNextPokemon();
@@ -132,5 +128,6 @@ function viewBack() {
   }
 }
 
-
-// git add summit -m "add animation and border.css, change js code, responsiv changes, add some Infos, add speciel Pokemons," 
+function eventBubbling(event) {
+  event.stopPropagation();
+}
